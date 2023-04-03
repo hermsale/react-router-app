@@ -17,8 +17,11 @@ function App() {
       <Routes>
         {/* esta es la parte de nuestra pagina que será dinamica */}
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/blog' element={<BlogPage/>}/>
-        <Route path='/blog/:slug' element={<BlogPost/>}/>
+
+        <Route path='/blog' element={<BlogPage/>}>
+           <Route path='/blog/:slug' element={<BlogPost/>}/>
+        </Route>
+
         <Route path='/profile' element={<ProfilePage/>}/>
         {/* cuando no funcione algo ira a esta ruta  */}
         <Route path='*' element={<p>Not Found</p>}/>

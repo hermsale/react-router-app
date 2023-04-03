@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { blogdata } from "./blogdata";
 
 
@@ -7,14 +7,16 @@ function BlogPage() {
 return (
     <React.Fragment>
         <h1>BlogPage</h1>
-        
             <ul>
                 {
                     blogdata.map(post =>
-                        <BlogLink  post={post}/>
-                    )
-                }
+                        <BlogLink key={post.slug} post={post}/>
+                        )
+                    }
             </ul>
+                   
+        <Outlet/>
+        
         
     </React.Fragment>
     )
