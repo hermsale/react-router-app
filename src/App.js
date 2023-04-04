@@ -6,26 +6,34 @@ import { BlogPage } from './BlogPage';
 import { ProfilePage } from './ProfilePage';
 import { Menu } from './Menu';
 import {BlogPost} from './BlogPost';
+import { LoginPage } from './LoginPage';
+import { LogoutPage } from './LogOut';
+
+import { AuthProvider } from './auth';
 
 function App() {
   return (
     <>
     {/* // este HashRouter funciona como un provider, asi como lo era el React Context  */}
     <HashRouter>
-      <Menu />
+      <AuthProvider>
+          <Menu />
 
-      <Routes>
-        {/* esta es la parte de nuestra pagina que será dinamica */}
-        <Route path='/' element={<HomePage/>}/>
+          <Routes>
+            {/* esta es la parte de nuestra pagina que será dinamica */}
+            <Route path='/' element={<HomePage/>}/>
 
-        <Route path='/blog' element={<BlogPage/>}>
-           <Route path='/blog/:slug' element={<BlogPost/>}/>
-        </Route>
+            <Route path='/blog' element={<BlogPage/>}>
+              <Route path='/blog/:slug' element={<BlogPost/>}/>
+            </Route>
 
-        <Route path='/profile' element={<ProfilePage/>}/>
-        {/* cuando no funcione algo ira a esta ruta  */}
-        <Route path='*' element={<p>Not Found</p>}/>
-      </Routes>
+            <Route path='/login' element={<LoginPage/>}/>
+            <Route path='/logout' element={<LogoutPage/>}/>
+            <Route path='/profile' element={<ProfilePage/>}/>
+            {/* cuando no funcione algo ira a esta ruta  */}
+            <Route path='*' element={<p>Not Found</p>}/>
+          </Routes>
+      </AuthProvider>
     </HashRouter>
     </>
   );
