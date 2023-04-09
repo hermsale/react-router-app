@@ -12,6 +12,8 @@ function LoginPage() {
         event.preventDefault();
         console.log(username);
         console.log(userpass);
+
+        auth.login({username, userpass})
     }; 
 
     // const onChange = (event) => {

@@ -1,9 +1,12 @@
 import React from "react";
+import { useAuth } from "./auth";
 
 function LogoutPage() {
+    const auth = useAuth();
 
    const onLogout = () => {
     console.log("Logout");
+    auth.logout();
    }
 
 
