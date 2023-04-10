@@ -13,6 +13,7 @@ function LoginPage() {
         console.log(username);
         console.log(userpass);
 
+        // le pasamos los argumentos al metodo login 
         auth.login({username, userpass})
     }; 
 
