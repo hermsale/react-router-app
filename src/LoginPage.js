@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth } from "./auth";
+import { Navigate } from "react-router-dom";
 
 function LoginPage() {
 
@@ -17,10 +18,9 @@ function LoginPage() {
         auth.login({username, userpass})
     }; 
 
-    // const onChange = (event) => {
-    //     setUsername(event.target.value)
-    //     console.log(username);
-    // };
+    if(auth.user){
+        return <Navigate to="/profile"/>
+    }
 
     return (
         <React.Fragment>

@@ -8,7 +8,7 @@ import { Menu } from './Menu';
 import {BlogPost} from './BlogPost';
 import { LoginPage } from './LoginPage';
 import { LogoutPage } from './LogOut';
-
+import { ProtectedRoute } from "./auth";
 import { AuthProvider } from './auth';
 
 function App() {
@@ -28,8 +28,21 @@ function App() {
             </Route>
 
             <Route path='/login' element={<LoginPage/>}/>
-            <Route path='/logout' element={<LogoutPage/>}/>
-            <Route path='/profile' element={<ProfilePage/>}/>
+
+            <Route path='/logout' element={
+              <ProtectedRoute>
+                <LogoutPage/>
+              </ProtectedRoute>
+              }
+            />
+
+            <Route path='/profile' element={
+              <ProtectedRoute>
+                <ProfilePage/>
+              </ProtectedRoute>
+              }
+            />
+
             {/* cuando no funcione algo ira a esta ruta  */}
             <Route path='*' element={<p>Not Found</p>}/>
           </Routes>
