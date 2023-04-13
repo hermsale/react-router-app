@@ -11,8 +11,8 @@ function LoginPage() {
     
     const onLogin = (event) => {
         event.preventDefault();
-        console.log(username);
-        console.log(userpass);
+        // console.log(username);
+        // console.log(userpass);
 
         // le pasamos los argumentos al metodo login 
         auth.login({username, userpass})
@@ -44,7 +44,7 @@ function LoginPage() {
                         setUserpass(e.target.value)
                     }
                 }
-                placeholder="usuario"  
+                placeholder="password"  
             />
             <button
             type="submit"

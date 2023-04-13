@@ -29,10 +29,10 @@ function AuthProvider({children}){
     const login = ({username, userpass}) =>{ 
         console.log(username)
             const isAdmin = adminList.find(user => {
-                if(user.nombre === username){
+                if(user.nombre === username){                         
                     return user.rol;
-                }else{
-                    return user.rol === 'Lector';  
+                }else{                 
+                    return null;
                 }
             }
         );
@@ -47,6 +47,7 @@ function AuthProvider({children}){
         setUser(null)
         navigate('/');
     }
+
 
     // si user es null, significa que no estamos autenticados - enviamos tambien envuelto en el provider, el login y logout
     const auth = {

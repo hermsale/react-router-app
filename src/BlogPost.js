@@ -20,7 +20,16 @@ function BlogPost() {
         navigate(-1);
     }
 
+    
     const rolDelete = (auth.user?.isAdmin?.rol==='Admin' || auth.user?.username === blogpost.author || auth.user?.isAdmin?.rol==='Editor')
+
+    const onDelete = () => {       
+    const index = blogdata.findIndex(post => post.slug === slug)
+    console.log(index);
+    blogdata.splice(index,1);
+
+    console.log(blogdata);
+    }
 
 return (
     <React.Fragment>
@@ -31,7 +40,7 @@ return (
 
 {/* si sos administrador o autor del post, podras borrar el post */}
         {rolDelete && (
-            <button>Eliminar BlogPost</button>
+            <button onClick={onDelete}>Eliminar BlogPost</button>
         )}
     </React.Fragment>
     )
