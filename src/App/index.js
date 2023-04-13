@@ -1,15 +1,15 @@
 
 import './App.css';
 import {HashRouter, Routes, Route} from 'react-router-dom'
-import { HomePage } from './HomePage';
-import { BlogPage } from './BlogPage';
-import { ProfilePage } from './ProfilePage';
-import { Menu } from './Menu';
-import {BlogPost} from './BlogPost';
-import { LoginPage } from './LoginPage';
-import { LogoutPage } from './LogOut';
-import { ProtectedRoute } from "./auth";
-import { AuthProvider } from './auth';
+import { HomePage } from '../HomePage';
+import { BlogPage } from '../BlogPage';
+import { ProfilePage } from '../ProfilePage';
+import { Menu } from '../Menu';
+import {BlogPost} from '../BlogPost';
+import { LoginPage } from '../LoginPage';
+import { LogoutPage } from '../LogOut';
+import { ProtectedRoute } from "../auth";
+import { AuthProvider } from '../auth';
 
 function App() {
   return (
