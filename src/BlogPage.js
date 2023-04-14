@@ -1,15 +1,21 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { blogdata } from "./blogdata";
+// import { blogdata } from "./blogdata";
+import { usePosts } from "./App/usePosts";
 
 
 function BlogPage() {
+
+    const {
+        posts
+    } = usePosts();
+
 return (
     <React.Fragment>
         <h1>BlogPage</h1>
             <ul>
                 {
-                    blogdata.map(post =>
+                    posts.map(post =>
                         <BlogLink key={post.slug} post={post}/>
                         )
                     }

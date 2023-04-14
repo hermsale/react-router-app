@@ -1,10 +1,10 @@
-import React from "react";
-import useLocalStorage from "./useLocalStorage"
+// import React from "react";
+import { useLocalStorage } from './useLocalStorage';
 
 function usePosts(){
 
     const {
-        posts,
+        post:posts,
         savePost,
     } = useLocalStorage('blogpost',[])
 
@@ -13,9 +13,13 @@ function usePosts(){
     const deletePost = (title) => {
         const postIndex = posts.findIndex(post => post.title === title);
         const newPost = [...posts]
-        newPost.splica(postIndex,1);
-
+        newPost.splice(postIndex,1);
         savePost(newPost);
+    }
+
+    return {
+        deletePost,
+        posts
     }
 }
 
