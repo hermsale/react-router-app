@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { blogdata } from "./blogdata";
-import { useAuth } from "./auth";
+import { useAuth } from "./App/auth";
 
 import { usePosts } from "./App/usePosts";
 
@@ -9,9 +9,9 @@ import { usePosts } from "./App/usePosts";
 function BlogPost() {
 
     const {
-        deletePost
+        deletePost,
+        sincronizePost
     } = usePosts();
-
 
 // citamos el hook useNavigate
     const navigate = useNavigate();
@@ -35,24 +35,26 @@ function BlogPost() {
     const index = blogdata.findIndex(post => post.slug === slug)
     console.log(index);
     blogdata.splice(index,1);
-    navigate(-1);
     deletePost(text);
+    navigate('/');
+    sincronizePost(false);
     console.log(blogdata);
     }
 
 return (
     <React.Fragment>
-        <h2>{blogpost.title}</h2>
-        <p>{blogpost.content}</p>        
-        <p>{blogpost.author}</p>
+        <h2>{blogpost?.title}</h2>
+        <p>{blogpost?.content}</p>        
+        <p>{blogpost?.author}</p>
         <button onClick={returnToBlog}>Volver al Blog</button>
 
 {/* si sos administrador o autor del post, podras borrar el post */}
         {rolDelete && (
-            <button onClick={() => onDelete(blogpost.title)}>Eliminar BlogPost</button>
+            <button onClick={() => onDelete(blogpost?.title)}>Eliminar BlogPost</button>
         )}
     </React.Fragment>
     )
 }
+
 
 export {BlogPost};

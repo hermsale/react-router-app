@@ -4,6 +4,7 @@ function useLocalStorage(itemName, initialValue){
 
     const [error, setError] = React.useState(false);
     const [post, setPost] = React.useState(initialValue);
+    const [syncPosts, setSincronizePost] = React.useState(true);
     
     
     React.useEffect( () => {
@@ -19,12 +20,13 @@ function useLocalStorage(itemName, initialValue){
             }
 
             setPost(parsedItem);
+            setSincronizePost(true);
         } catch (err) {
             console.log('ocurrio un error',err);
             setError(err);
         }
-         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+        //  eslint-disable-next-line react-hooks/exhaustive-deps
+    },[syncPosts])
 
     const savePost = (newPost) => {
         try {
@@ -37,11 +39,16 @@ function useLocalStorage(itemName, initialValue){
         
     }
 
+    const sincronizePost = () => {
+        setSincronizePost(false);
+    }
+
 
     return {
         savePost,
         error,
         post,
+        sincronizePost
     }
 
 }

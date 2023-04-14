@@ -6,6 +6,7 @@ function usePosts(){
     const {
         post:posts,
         savePost,
+        sincronizePost,
     } = useLocalStorage('blogpost',[])
 
 
@@ -15,11 +16,13 @@ function usePosts(){
         const newPost = [...posts]
         newPost.splice(postIndex,1);
         savePost(newPost);
+        // sincronizePost(false);
     }
 
     return {
         deletePost,
-        posts
+        posts,
+        sincronizePost
     }
 }
 

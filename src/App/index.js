@@ -8,8 +8,8 @@ import { Menu } from '../Menu';
 import {BlogPost} from '../BlogPost';
 import { LoginPage } from '../LoginPage';
 import { LogoutPage } from '../LogOut';
-import { ProtectedRoute } from "../auth";
-import { AuthProvider } from '../auth';
+import { ProtectedRoute } from "./auth";
+import { AuthProvider } from './auth';
 
 function App() {
   return (

@@ -32,7 +32,7 @@ return (
 function BlogLink({post}){
     return (
         <li>
-            <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+            <Link to={`/blog/${post?.slug}`}>{post?.title}</Link>
         </li>
     );
 }
