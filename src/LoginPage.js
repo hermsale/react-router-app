@@ -45,6 +45,7 @@ function LoginPage() {
                     }
                 }
                 placeholder="password"  
+                type="password" 
             />
             <button
             type="submit"

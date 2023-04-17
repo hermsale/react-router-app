@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "./App/auth";
 // import { Navigate } from "react-router-dom";
+import "./ProfilePage.css"
  
 
 function ProfilePage() {
@@ -14,11 +15,12 @@ function ProfilePage() {
     
     return (
         <>
-            {/* {console.log(auth)} */}
-            <h1>ProfilePage</h1>
-            <h2>Bienvenido {auth.user?.username}</h2>
-            <h3>Y su password es {auth.user?.userpass}</h3>
-            <h3>Su rango de autorizacion es: {auth.user?.isAdmin.rol || auth.user?.isAdmin} </h3>
+            <div className="user-card">
+                <h1 className="user-card">ProfilePage</h1>
+                <h2 className="user-card">Bienvenido {auth.user?.username}</h2>
+                <p className="user-card">Su password es {auth.user?.userpass}</p>
+                <p className="user-card">Su rango de autorizacion es: {auth.user?.isAdmin.rol || auth.user?.isAdmin} </p>
+            </div>
         </>
     )
 }

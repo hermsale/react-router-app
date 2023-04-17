@@ -1,0 +1,28 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Espacio igual entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    list-style: none; /* Elimina el marcador de la lista */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    color: #333;
+    text-decoration: none;
+    /* font-weight: bold; */
+    margin: 0 10px; /* Espacio entre los elementos */
+  }
+  
+  .nav-link{
+    text-decoration: none;
+    color: rgb(0, 34, 255);
+    /* font-weight: bold; */
+  }
+  
+  .active {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+  }

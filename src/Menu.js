@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "./App/auth";
-
+import "./Menu.css"
 
 function Menu (){
 
@@ -11,7 +11,7 @@ function Menu (){
 
     return (
         <nav>
-            <ul>            
+            <ul className="menu">            
                     {
                     routes.map(route => {
                         // si hay un usuario, y la ruta es Login, la saltea 
@@ -19,8 +19,10 @@ function Menu (){
                         // si es una ruta privada y no tenemos usuario, lo saltea
                         if(route.private && !auth.user)return null;
                             return (     
-                                <li key={route.to}>                                                  
-                                    <NavLink style={({ isActive }) => ({ color: isActive ? 'red' : 'blue' })} to={route.to}>
+                                <li key={route.to}>      
+                                 {/* <NavLink style={({ isActive }) => ({ color: isActive ? 'red' : 'blue' })} to={route.to}>
+                                        {route.text}                                             */}
+                                    <NavLink className="nav-link" activeClassName="active"  to={route.to}>
                                         {route.text}
                                     </NavLink>
                                 </li>                                

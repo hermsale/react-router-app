@@ -4,13 +4,15 @@ import { blogdata } from "./blogdata";
 import { useAuth } from "./App/auth";
 
 import { usePosts } from "./App/usePosts";
+import './BlogPost.css';
 
 
 function BlogPost() {
 
     const {
         deletePost,
-        sincronizePost
+        sincronizePost,
+        posts
     } = usePosts();
 
 // citamos el hook useNavigate
@@ -22,14 +24,14 @@ function BlogPost() {
     const auth = useAuth()
 
     // utilizamos el arreglo blogdata para buscar el slug que se paso por parametro
-    const blogpost = blogdata.find(post => post.slug === slug);
+    const blogpost = posts.find(post => post.slug === slug);
 
     const returnToBlog = () =>{
         navigate(-1);
     }
 
     
-    const rolDelete = (auth.user?.isAdmin?.rol==='Admin' || auth.user?.username === blogpost.author || auth.user?.isAdmin?.rol==='Editor')
+    const rolDelete = (auth.user?.isAdmin?.rol==='Admin' || auth.user?.username === blogpost?.author || auth.user?.isAdmin?.rol==='Editor')
 
     const onDelete = (text) => {       
     const index = blogdata.findIndex(post => post.slug === slug)
@@ -43,15 +45,19 @@ function BlogPost() {
 
 return (
     <React.Fragment>
-        <h2>{blogpost?.title}</h2>
-        <p>{blogpost?.content}</p>        
-        <p>{blogpost?.author}</p>
-        <button onClick={returnToBlog}>Volver al Blog</button>
+        <div className="blogpost">
+            <h2 className="blogpost">Título: {blogpost?.title}</h2>
+            <p className="blogpost">{blogpost?.content}</p>        
+            <p className="blogpost">Autor: {blogpost?.author}</p>
+            <div className="div__blogpost--button">
+            <button className="blogpost btn-back" onClick={returnToBlog}>Volver al Blog</button>
+        {/* si sos administrador o autor del post, podras borrar el post */}
+            {rolDelete && (
+                <button className="btn-delete" onClick={() => onDelete(blogpost?.title)}>Eliminar BlogPost</button>
+            )}
+            </div>
+        </div>
 
-{/* si sos administrador o autor del post, podras borrar el post */}
-        {rolDelete && (
-            <button onClick={() => onDelete(blogpost?.title)}>Eliminar BlogPost</button>
-        )}
     </React.Fragment>
     )
 }

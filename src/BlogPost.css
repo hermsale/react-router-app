@@ -1,0 +1,64 @@
+.blogpost {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .blogpost h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  
+  .blogpost h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  
+  .blogpost p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+  }
+  
+  .blogpost button{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  
+  .btn-delete:hover {
+    background-color: #c82333;
+  }
+  
+  .blogpost .btn-back:hover {
+    background-color: #0069d9;
+  }
+  
+  .btn-back {
+    margin-right: 10px;
+  }
+  
+  .btn-delete{
+    
+    background-color: #dc3545;
+  }
+  
+  .div__blogpost--button{
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente el botón al centro */
+    align-items: center; /* Alinea verticalmente el botón al centro */
+     /* height: 100vh; Para demostrar la alineación vertical */
+  }
