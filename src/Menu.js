@@ -60,6 +60,11 @@ const routes = [
         to:"/logout",
         text:'Logout',
         private:true,
+    },
+    {
+        to:"/create-post",
+        text:'Crear Post',
+        private:false,
     }
 
 

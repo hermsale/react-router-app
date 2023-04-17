@@ -10,6 +10,7 @@ import { LoginPage } from '../LoginPage';
 import { LogoutPage } from '../LogOut';
 import { ProtectedRoute } from "./auth";
 import { AuthProvider } from './auth';
+import { FormPost } from '../FormPost';
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
               </ProtectedRoute>
               }
             />
+
+            <Route path='/create-post' element={<FormPost/>}/>
 
             {/* cuando no funcione algo ira a esta ruta  */}
             <Route path='*' element={<p>Not Found</p>}/>
