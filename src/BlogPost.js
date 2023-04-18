@@ -46,7 +46,8 @@ function BlogPost() {
     console.log(blogdata);
     }
 
-    const onChangePost = (title) =>{
+    
+    const onChangePost = () =>{
         setOpenChangePost(prevState => !prevState);
     }
 
@@ -66,6 +67,7 @@ return (
                 <button className="btn-delete" onClick={() => onDelete(blogpost?.title)}>Eliminar BlogPost</button>
             )}
             </div>
+
             {rolDelete && openChangePost &&(
                 <ChangePost 
                 title={blogpost.title}

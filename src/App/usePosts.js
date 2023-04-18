@@ -44,6 +44,7 @@ function usePosts(){
         navigate('/blog');
     }
 
+    // funcion que actualiza el valor del contenido de un post
     const changePost = ({titlePost, contenidoPost}) => {
         console.log(titlePost, contenidoPost);
         const postIndex = posts.findIndex(post => post.title === titlePost);
