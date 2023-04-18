@@ -5,9 +5,12 @@ import { useAuth } from "./App/auth";
 
 import { usePosts } from "./App/usePosts";
 import './BlogPost.css';
+import { ChangePost } from "./ChangePost";
 
 
 function BlogPost() {
+
+    const [openChangePost, setOpenChangePost] = React.useState('')
 
     const {
         deletePost,
@@ -43,6 +46,10 @@ function BlogPost() {
     console.log(blogdata);
     }
 
+    const onChangePost = (title) =>{
+        setOpenChangePost(prevState => !prevState);
+    }
+
 return (
     <React.Fragment>
         <div className="blogpost">
@@ -53,9 +60,15 @@ return (
             <button className="blogpost btn-back" onClick={returnToBlog}>Volver al Blog</button>
         {/* si sos administrador o autor del post, podras borrar el post */}
             {rolDelete && (
+                <button className="blogpost btn-back" onClick={() => onChangePost(blogpost?.title)}>Modificar Post</button>
+            )}
+            {rolDelete && (
                 <button className="btn-delete" onClick={() => onDelete(blogpost?.title)}>Eliminar BlogPost</button>
             )}
             </div>
+            {rolDelete && openChangePost &&(
+                <ChangePost/>
+            )}
         </div>
 
     </React.Fragment>

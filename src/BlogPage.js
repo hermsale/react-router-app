@@ -20,7 +20,6 @@ return (
                         )
                     }
             </ul>
-                   
         <Outlet/>
         
         
@@ -32,7 +31,7 @@ return (
 function BlogLink({post}){
     return (
         <li>
-            <Link className="blogpost"  to={`/blog/${post?.slug}`}>{post?.title}</Link>
+            <Link className="blogpost__link"  to={`/blog/${post?.slug}`}>{post?.title}</Link>
         </li>
     );
 }

@@ -4,7 +4,7 @@
     justify-content: space-between; /* Espacio igual entre los elementos */
     align-items: center; /* Centra los elementos verticalmente */
     list-style: none; /* Elimina el marcador de la lista */
-    margin: 0;
+    margin: 20px 0;
     padding: 0;
   }
   

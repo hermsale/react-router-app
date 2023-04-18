@@ -5,12 +5,16 @@ import './FormPost.css';
 function FormPost(){
 
     const { 
-        addPost 
+        addPost,
+        titlePost,
+        setTitlePost,
+        contenidoPost,
+        setContenidoPost,
+        autorPost,
+        setAutorPost
     } = usePosts();
 
-    const [titlePost, setTitlePost] = React.useState('');
-    const [contenidoPost, setContenidoPost] = React.useState('');
-    const [autorPost, setAutorPost] = React.useState('');
+    
 
     const createPost = (e) =>{
         e.preventDefault();

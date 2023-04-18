@@ -1,7 +1,14 @@
-// import React from "react";
+import React from "react";
+import { useNavigate } from 'react-router-dom';
 import { useLocalStorage } from './useLocalStorage';
 
 function usePosts(){
+
+    const [titlePost, setTitlePost] = React.useState('');
+    const [contenidoPost, setContenidoPost] = React.useState('');
+    const [autorPost, setAutorPost] = React.useState('');
+
+    const navigate = useNavigate();
 
     const {
         post:posts,
@@ -10,7 +17,7 @@ function usePosts(){
     } = useLocalStorage('blogpost',[])
 
 
-    // funcion para eliminar un post 
+    // funcion para eliminar un post del LocalStorage
     const deletePost = (title) => {
         const postIndex = posts.findIndex(post => post.title === title);
         const newPost = [...posts]
@@ -19,6 +26,7 @@ function usePosts(){
         // sincronizePost(false);
     }
 
+    // agerga un post al LocalStorage
     const addPost = ({titlePost, contenidoPost, autorPost}) => {
         // generamos localmente el slug
         let slug = titlePost.replace(/ /g, "-");
@@ -33,19 +41,22 @@ function usePosts(){
         })
 
         savePost(newPost)
+        navigate('/blog');
     }
 
-    // datos que tiene que tener un post
-// title:'Que es Angular',
-// slug:'que-es-Angular',
-// content:'Angular el framework mas usado.',
-// author: 'Nahuel'
+    
 
     return {
         deletePost,
         posts,
         sincronizePost,
-        addPost
+        addPost,
+        titlePost,
+        setTitlePost,
+        contenidoPost,
+        setContenidoPost,
+        autorPost,
+        setAutorPost,
     }
 }
 

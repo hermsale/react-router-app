@@ -1,9 +1,48 @@
 .blogpost {
+    margin: 20px 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .blogpost__link{
     margin: 20px 0;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+
+    /* flex: 1 0 100%; Para asegurarse de que ocupe todo el ancho disponible
+  overflow: hidden; /* Para ocultar cualquier contenido que sobresalga del contenedor 
+  text-overflow: ellipsis;  Para agregar puntos suspensivos (...) al final del texto que se ha recortado 
+  white-space: nowrap;  */
+    
+  }
+
+  .blogpost__link:hover{
+    background-color: #a1cfff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  li{
+    list-style: none;
+    padding: 5px;
+    color: black;
+    display: flex;
+  }
+
+  ul{
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente el botón al centro */
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .blogpost h1 {
@@ -44,7 +83,7 @@
   }
   
   .blogpost .btn-back:hover {
-    background-color: #0069d9;
+    background-color: #034b98;
   }
   
   .btn-back {
