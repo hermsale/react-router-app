@@ -44,6 +44,17 @@ function usePosts(){
         navigate('/blog');
     }
 
+    const changePost = ({titlePost, contenidoPost}) => {
+        console.log(titlePost, contenidoPost);
+        const postIndex = posts.findIndex(post => post.title === titlePost);
+        const newPost = [...posts]
+        // newPost.splice(postIndex,1);
+        console.log(postIndex, newPost);
+        newPost[postIndex].content = contenidoPost;
+        savePost(newPost);
+
+        navigate('/blog');
+    }
     
 
     return {
@@ -57,6 +68,7 @@ function usePosts(){
         setContenidoPost,
         autorPost,
         setAutorPost,
+        changePost
     }
 }
 

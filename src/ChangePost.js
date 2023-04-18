@@ -1,29 +1,29 @@
 import React from "react";
 import { usePosts } from "./App/usePosts";
 
-function ChangePost(){
+function ChangePost(props){
 
     const {
         setContenidoPost,
-        contenidoPost
+        contenidoPost,
+        changePost
     } = usePosts();
 
-    const changePost = (e) =>{
+    const onChangePost = (e) =>{
         e.preventDefault();
-        console.log(contenidoPost);
-        // const posteo = {
-        //     titlePost: titlePost,
-        //     autorPost: autorPost,
-        //     contenidoPost: contenidoPost,
-        // }
 
-        // addPost(posteo);
+        const updatePost = {
+            titlePost: props.title,
+            contenidoPost: contenidoPost,
+        }
+
+        changePost(updatePost)
     } 
 
     return(
         <>
         <h1>Modificar Post </h1>
-        <form onSubmit={changePost}>
+        <form onSubmit={onChangePost}>
             <label>Contenido</label>
             <textarea
                 placeholder="Ingrese el contenido del post"

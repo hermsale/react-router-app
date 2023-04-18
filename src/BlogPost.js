@@ -67,7 +67,9 @@ return (
             )}
             </div>
             {rolDelete && openChangePost &&(
-                <ChangePost/>
+                <ChangePost 
+                title={blogpost.title}
+                />
             )}
         </div>
 
