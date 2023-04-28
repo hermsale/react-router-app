@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 // import { blogdata } from "./blogdata";
-import { usePosts } from "./App/usePosts";
-import './BlogPost.css';
+import { usePosts } from "../App/usePosts";
+import './BlogPage.css';
 
 function BlogPage() {
 

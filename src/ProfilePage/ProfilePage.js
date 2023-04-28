@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth } from "./App/auth";
+import { useAuth } from "../App/auth";
 // import { Navigate } from "react-router-dom";
 import "./ProfilePage.css"
  

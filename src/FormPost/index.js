@@ -1,5 +1,5 @@
 import React from "react";
-import { usePosts } from "./App/usePosts";
+import { usePosts } from "../App/usePosts";
 import './FormPost.css';
 
 function FormPost(){

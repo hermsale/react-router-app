@@ -1,0 +1,27 @@
+
+  .form__changePost{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    padding: 20px;
+    background-color: #7cacf4dc;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 1.3s ease-in-out;
+    transform: translateX(0%);
+    z-index: 9999;
+    
+  }
+
+
+  .btn-cancel{
+    background-color: #f3e6e6;
+    color: #140b0b;
+    margin: 5px;
+    border: 2px solid black;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #c82333;
+  }

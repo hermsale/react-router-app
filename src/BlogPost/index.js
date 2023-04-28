@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { blogdata } from "./blogdata";
-import { useAuth } from "./App/auth";
+import { blogdata } from "../blogdata";
+import { useAuth } from "../App/auth";
 
-import { usePosts } from "./App/usePosts";
+import { usePosts } from "../App/usePosts";
 import './BlogPost.css';
-import { ChangePost } from "./ChangePost";
+import { ChangePost } from "../ChangePost";
 
 
 function BlogPost() {
@@ -71,6 +71,7 @@ return (
             {rolDelete && openChangePost &&(
                 <ChangePost 
                 title={blogpost.title}
+                setOpenChangePost={setOpenChangePost}
                 />
             )}
         </div>
